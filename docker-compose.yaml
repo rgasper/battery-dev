@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  jupyter:
+    image: battery-dev/jupyter:latest
+    build: ./jupyter_app
+    container_name: jupyter
+    ports:
+      - "8888:8888"
+    working_dir: "/juypter_app"
+    environment:
+      - JUPYTER_PORT=8888
