@@ -28,6 +28,12 @@ Pick the last one that begins in `http://127.0.0.1:8888`. The other two won't wo
 
 Stop the server by issuing the keyboard interrupt command for your OS in the terminal.
 
+### dvc setup
+
+I've hosted the dvc remote cache on a folder in my google drive. I believe it should be sufficient based on [gdrive limits](https://support.google.com/a/answer/7338880). When you first run `dvc pull` or `dvc push` you will be prompted to login. Just paste the auth code back into the terminal like dvc asks and you should be good to go!
+
+When you launch for the first time, to get data, simply run `dvc pull`.
+
 ### daemon mode
 
 If you would like the jupyter container to run in the background, and not have it occupy your terminal with logs:

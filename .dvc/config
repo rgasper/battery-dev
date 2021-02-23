@@ -1,0 +1,4 @@
+[core]
+    remote = ray-gdrive
+['remote "ray-gdrive"']
+    url = gdrive://1En2qjK_yXJqjKaeGbhTYjlLoOswVtCi7
