@@ -5,7 +5,7 @@
 - SOH: State-of-health, the metric we are trying to predict. Here, SOH corresponds to the amount of charge we can get out of the battery from a standardized test. Usually, a 2 or 3 hour discharge, but it doesn't really matter - the point is that these SOH measurements are common in the lab, but essentially never happen in real-world use.
 - Load: the demand on the battery, i.e., the current signal
 - Response: the performance of the battery at a given load, i.e., the voltage signal
-  - At a given load (current), the voltage of the battery will change during lifetime. As the battery ages, the performance can get better or worse, depending on what's changing inside the battery. 
+  - At a given load (current), the voltage of the battery will change during lifetime. As the battery ages, the performance can get better or worse, depending on what's changing inside the battery.
 
 ## Data
 
@@ -16,6 +16,7 @@
 ## Goal
 
 Use the timeseries data to predict capacity at 4 later dates.
+
 ## Challenge / Approach
 
 ### Training
