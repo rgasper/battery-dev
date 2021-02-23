@@ -33,7 +33,6 @@ Stop the server by issuing the keyboard interrupt command for your OS in the ter
 If you would like the jupyter container to run in the background, and not have it occupy your terminal with logs:
 
 ```console
-docker compose build
 docker compose up -d
 ```
 
