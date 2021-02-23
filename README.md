@@ -46,3 +46,9 @@ docker compose down
 ## Repo Guide
 
 Currently all code lives in python scripts in `jupyter_app/`. Everything else is just configuration.
+
+## Architecture Choices
+
+- Docker: allows no ambiguity and easy setup for environment dependencies
+- Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
+- Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
