@@ -3,7 +3,7 @@ Project repository for battery dev team code-better
 
 ## Setup
 
-To get started, first install Docker for your operating system: https://docs.docker.com/get-docker/.
+We're using Docker to ensure we all have identical environments to work in. To get started, first install Docker for your operating system: https://docs.docker.com/get-docker/.
 
 Then it's as easy as:
 
