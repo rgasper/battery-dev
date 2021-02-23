@@ -28,6 +28,22 @@ Pick the last one that begins in `http://127.0.0.1:8888`. The other two won't wo
 
 Stop the server by issuing the keyboard interrupt command for your OS in the terminal.
 
+### daemon mode
+
+If you would like the jupyter container to run in the background, and not have it occupy your terminal with logs:
+
+```console
+docker compose build
+docker compose up -d
+```
+
+Do your stuff, then when you're done and want to turn it off:
+
+```console
+cd path/to/battery-dev # if you navigated around with your terminal
+docker compose down
+```
+
 ## Repo Guide
 
 Currently all code lives in python scripts in `jupyter_app/`. Everything else is just configuration.
