@@ -5,6 +5,10 @@ services:
     image: battery-dev/jupyter:latest
     build: .
     container_name: jupyter
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: /app/entrypoint.sh
     ports:
       - "8888:8888"
     environment:

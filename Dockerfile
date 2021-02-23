@@ -11,12 +11,5 @@ RUN apt-get clean &&\
 # RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 # RUN /etc/init.d/ssh start
 
-RUN mkdir /app
-
-COPY requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
-
-WORKDIR /app
-ADD . /app/
-
-CMD [ "bash", "/app/entrypoint.sh" ]
+COPY requirements.txt /var/requirements.txt
+RUN pip install -r /var/requirements.txt
