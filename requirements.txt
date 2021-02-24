@@ -1,2 +1,8 @@
 jupyterlab
 dvc[gdrive]
+seaborn
+numpy
+scipy
+pandas
+plotly
+chart_studio
