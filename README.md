@@ -51,7 +51,11 @@ docker compose down
 
 ## Repo Guide
 
-Currently all code lives in python scripts in `jupyter_app/`. Everything else is just configuration.
+All code in the top-level directory is configuration, container setup, or the container executable.
+
+- /data
+  - contains data csvs used by the models
+  - entire dir tracked by dvc
 
 ## Architecture Choices
 
