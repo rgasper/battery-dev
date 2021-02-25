@@ -1,0 +1,8 @@
+stages:
+  concat:
+    cmd: python stages/concat.py
+    deps:
+    - data/initial_features/
+    - stages/concat.py
+    outs:
+    - data/concatenated_battery_profile.csv
