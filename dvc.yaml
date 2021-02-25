@@ -6,3 +6,10 @@ stages:
     - stages/concat.py
     outs:
     - data/concatenated_battery_profile.csv
+  train_synthetic_y_model:
+    cmd: python stages/identify_synthetic_y_model.py
+    deps:
+    - data/target.csv
+    - stages/identify_synthetic_y_model.py
+    outs:
+    - models/params.txt

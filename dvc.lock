@@ -12,3 +12,16 @@ concat:
   - path: data/concatenated_battery_profile.csv
     md5: 53d8c67d345c58346187aee474dd23aa
     size: 514580507
+train_synthetic_y_model:
+  cmd: python stages/identify_synthetic_y_model.py
+  deps:
+  - path: data/target.csv
+    md5: cdefe93867a16b6b1ba4b8ee570f5423
+    size: 145
+  - path: stages/identify_synthetic_y_model.py
+    md5: 897bc9d0622379ee9e171321719e65dd
+    size: 670
+  outs:
+  - path: models/params.txt
+    md5: a47f54a4347de3a634bcd2f71a568f38
+    size: 41
