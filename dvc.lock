@@ -6,9 +6,9 @@ concat:
     size: 407845450
     nfiles: 6
   - path: stages/concat.py
-    md5: 85a951a269b6e2689915903e7eb33239
-    size: 265
+    md5: 823f7080405ecd2b23f90c45d7e74656
+    size: 273
   outs:
   - path: data/concatenated_battery_profile.csv
-    md5: 93c9037313745cd42808fd357f4b32b2
+    md5: 53d8c67d345c58346187aee474dd23aa
     size: 514580507
