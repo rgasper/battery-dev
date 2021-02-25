@@ -6,7 +6,7 @@ import os
 
 files = glob.glob("data/initial_features/*")
 dfs = []
-for file in files:
+for file in sorted(files):
     dfs.append(pd.read_csv(file))
 all_df = pd.concat(dfs)
 all_df.to_csv("data/concatenated_battery_profile.csv")
