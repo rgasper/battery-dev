@@ -2,6 +2,14 @@
 # battery-dev
 
 Project repository for battery dev team code-better
+Please see 'notebooks/results' for an overview of the model (quite simple) and approach.
+Here, we have tried to use best-practices to ensure model reproducibility, and hope others will show interest in these tools for their own projects.
+## Architecture Choices
+The tools used to ensure model reproducibility include
+- Github: needs no introduction, you're here
+- Docker: allows no ambiguity and easy setup for environment dependencies
+- Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
+- Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
 
 ## Setup
 
@@ -56,9 +64,11 @@ All code in the top-level directory is configuration, container setup, or the co
 - /data
   - contains data csvs used by the models
   - entire dir tracked by dvc
+- /models
+  - any model files or saved parameter values
+- /stages
+  - code for each stage of the model development process
+  - stages are called in order by dvc, following the dvc.yaml file in the main directory
+- /results
+  - any output files reporting predictions
 
-## Architecture Choices
-
-- Docker: allows no ambiguity and easy setup for environment dependencies
-- Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
-- Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
