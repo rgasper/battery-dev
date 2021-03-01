@@ -11,6 +11,8 @@ The tools used to ensure model reproducibility include
 - Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
 - Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
 
+Note: this is not finished, there isn't really a model here. The fundamental issue is the low amount of data. I think an interesting direction to go is to implement a RNN that from a history of charge/discharge profiles predicts the next charge/discharge profile, though defining what is input data and what is target data in that case becomes very muddy.
+
 ## Setup
 
 We're using Docker to ensure we all have identical environments to work in. To get started, first install Docker for your operating system: https://docs.docker.com/get-docker/.
