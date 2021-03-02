@@ -1,7 +1,18 @@
 
 # battery-dev
 
+
+Note: this is not finished, there isn't really a model here. The fundamental issue is the low amount of data. I think an interesting direction to go is to implement a RNN that from a history of charge/discharge profiles predicts the next charge/discharge profile, though defining what is input data and what is target data in that case becomes very muddy.
+
 Project repository for battery dev team code-better
+Please see 'notebooks/results' for an overview of the model (quite simple) and approach.
+Here, we have tried to use best-practices to ensure model reproducibility, and hope others will show interest in these tools for their own projects.
+## Architecture Choices
+The tools used to ensure model reproducibility include
+- Github: needs no introduction, you're here
+- Docker: allows no ambiguity and easy setup for environment dependencies
+- Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
+- Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
 
 ## Setup
 
@@ -74,8 +85,4 @@ To track and commit a new data file: `dvc add; dvc commit`
 To run a pipeline, automatically committing data changes `dvc repro`
 To push data to the cloud: `dvc push`
 
-## Architecture Choices
 
-- Docker: allows no ambiguity and easy setup for environment dependencies
-- Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
-- Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
