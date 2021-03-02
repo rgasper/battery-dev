@@ -6,9 +6,37 @@ concat:
     size: 407845450
     nfiles: 6
   - path: stages/concat.py
-    md5: 823f7080405ecd2b23f90c45d7e74656
-    size: 273
+    md5: a2a96aab52da894f3f32ce466ae96bbc
+    size: 706
+  params:
+    params.yaml:
+      development: true
   outs:
   - path: data/concatenated_battery_profile.csv
-    md5: 53d8c67d345c58346187aee474dd23aa
-    size: 514580507
+    md5: 6f712a198164758807f284642163850a
+    size: 3929790
+smooth:
+  cmd: python stages/smooth.py
+  deps:
+  - path: data/concatenated_battery_profile.csv
+    md5: 6f712a198164758807f284642163850a
+    size: 3929790
+  - path: stages/smooth.py
+    md5: 09cec572e1af9c5ebd1c1120aba298e4
+    size: 759
+  params:
+    params.yaml:
+      smoothing:
+        window: 51
+        polyorder: 3
+        wrap_mode: nearest
+  outs:
+  - path: data/current.csv
+    md5: 511e9e57134200debe864e3444ce8879
+    size: 3415059
+  - path: data/temperature.csv
+    md5: 9f1523e28de5c3528a8e866675abf0bd
+    size: 2302431
+  - path: data/voltage.csv
+    md5: 56042672f7aa0d6f8ab85544860ea1db
+    size: 4212992

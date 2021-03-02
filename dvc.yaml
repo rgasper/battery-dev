@@ -2,7 +2,20 @@ stages:
   concat:
     cmd: python stages/concat.py
     deps:
-    - data/initial_features/
-    - stages/concat.py
+      - stages/concat.py
+      - data/initial_features/
     outs:
-    - data/concatenated_battery_profile.csv
+      - data/concatenated_battery_profile.csv
+    params:
+      - development
+  smooth:
+    cmd: python stages/smooth.py
+    deps:
+      - stages/smooth.py
+      - data/concatenated_battery_profile.csv
+    outs:
+      - data/current.csv
+      - data/voltage.csv
+      - data/temperature.csv
+    params:
+      - smoothing
