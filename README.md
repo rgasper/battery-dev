@@ -67,11 +67,22 @@ All code in the top-level directory is configuration, container setup, or the co
 - /data
   - contains data csvs used by the models
   - entire dir tracked by dvc
-- /models
-  - any model files or saved parameter values
+- /exploration
+  - notebooks for playing around with data
 - /stages
-  - code for each stage of the model development process
-  - stages are called in order by dvc, following the dvc.yaml file in the main directory
-- /results
-  - any output files reporting predictions
+  - contains source code for dvc stages
+- dvc.lock
+  - lockfile for dvc-tracked files
+- dvc.yaml
+  - dvc pipeline definition file
+- params.yaml
+  - dvc pipeline parameters file
+
+### Running DVC
+
+To pull all data from the cloud: `dvc pull`
+To track and commit a new data file: `dvc add; dvc commit`
+To run a pipeline, automatically committing data changes `dvc repro`
+To push data to the cloud: `dvc push`
+
 

@@ -2,14 +2,20 @@ stages:
   concat:
     cmd: python stages/concat.py
     deps:
-    - data/initial_features/
-    - stages/concat.py
+      - stages/concat.py
+      - data/initial_features/
     outs:
-    - data/concatenated_battery_profile.csv
-  train_synthetic_y_model:
-    cmd: python stages/identify_synthetic_y_model.py
+      - data/concatenated_battery_profile.csv
+    params:
+      - development
+  smooth:
+    cmd: python stages/smooth.py
     deps:
-    - data/target.csv
-    - stages/identify_synthetic_y_model.py
+      - stages/smooth.py
+      - data/concatenated_battery_profile.csv
     outs:
-    - models/params.txt
+      - data/current.csv
+      - data/voltage.csv
+      - data/temperature.csv
+    params:
+      - smoothing
