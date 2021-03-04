@@ -22,21 +22,21 @@ smooth:
     md5: 6f712a198164758807f284642163850a
     size: 3929790
   - path: stages/smooth.py
-    md5: 09cec572e1af9c5ebd1c1120aba298e4
+    md5: ea146fa5992728784f2258d566555e91
     size: 759
   params:
     params.yaml:
       smoothing:
-        window: 51
+        window: 601
         polyorder: 3
         wrap_mode: nearest
   outs:
   - path: data/current.csv
-    md5: 511e9e57134200debe864e3444ce8879
-    size: 3415059
+    md5: 34fc378f25db15163a8025109c960549
+    size: 3473471
   - path: data/temperature.csv
     md5: 9f1523e28de5c3528a8e866675abf0bd
     size: 2302431
   - path: data/voltage.csv
-    md5: 56042672f7aa0d6f8ab85544860ea1db
-    size: 4212992
+    md5: 438d16488db49b51c03fc28de09c56b2
+    size: 4208939
