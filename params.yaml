@@ -3,3 +3,5 @@ smoothing:
   window: 601  # savgol filter window must be odd
   polyorder: 3  # savgol filter polyorder must be less than window
   wrap_mode: 'nearest'
+peak_finding:
+  prominence: 5

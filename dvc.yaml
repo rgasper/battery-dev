@@ -14,8 +14,15 @@ stages:
       - stages/smooth.py
       - data/concatenated_battery_profile.csv
     outs:
-      - data/current.csv
-      - data/voltage.csv
-      - data/temperature.csv
+      - data/smoothed.csv
     params:
       - smoothing
+  peaks:
+    cmd: python stages/peaks.py
+    deps:
+      - stages/peaks.py
+      - data/smoothed.csv
+    outs:
+      - data/peaks.csv
+    params:
+      - peak_finding

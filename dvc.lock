@@ -22,8 +22,8 @@ smooth:
     md5: 6f712a198164758807f284642163850a
     size: 3929790
   - path: stages/smooth.py
-    md5: ea146fa5992728784f2258d566555e91
-    size: 759
+    md5: 29b65d0189754a9028f854967cdba07a
+    size: 634
   params:
     params.yaml:
       smoothing:
@@ -31,12 +31,23 @@ smooth:
         polyorder: 3
         wrap_mode: nearest
   outs:
-  - path: data/current.csv
-    md5: 34fc378f25db15163a8025109c960549
-    size: 3473471
-  - path: data/temperature.csv
-    md5: 9f1523e28de5c3528a8e866675abf0bd
-    size: 2302431
-  - path: data/voltage.csv
-    md5: 438d16488db49b51c03fc28de09c56b2
-    size: 4208939
+  - path: data/smoothed.csv
+    md5: 89715499ee4d2cf5fb98e11626aee0b1
+    size: 6828309
+peaks:
+  cmd: python stages/peaks.py
+  deps:
+  - path: data/smoothed.csv
+    md5: 89715499ee4d2cf5fb98e11626aee0b1
+    size: 6828309
+  - path: stages/peaks.py
+    md5: 39bc7c613cf054d310e52df63c04b890
+    size: 516
+  params:
+    params.yaml:
+      peak_finding:
+        prominence: 5
+  outs:
+  - path: data/peaks.csv
+    md5: e93f7129274ca3ed406c449c3213543f
+    size: 70410
