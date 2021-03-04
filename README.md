@@ -5,6 +5,15 @@ Project repository for battery dev team code-better
 
 ## Setup
 
+NOTE: alternate option - it's just as easy if not easier to use a conda environment.  Just run:
+
+```console
+conda create -n batterydev python=3.9
+pip install -r requirements.txt
+```
+
+I use conda b/c I prefer to use VSCode compared to Jupyter Lab, and VSCode runs Jupyter notebooks inside the IDE.
+
 We're using Docker to ensure we all have identical environments to work in. To get started, first install Docker for your operating system: https://docs.docker.com/get-docker/.
 
 Then it's as easy as:
@@ -67,12 +76,12 @@ All code in the top-level directory is configuration, container setup, or the co
 - params.yaml
   - dvc pipeline parameters file
 
-### Running DVC
+## Running DVC
 
-To pull all data from the cloud: `dvc pull`
-To track and commit a new data file: `dvc add; dvc commit`
-To run a pipeline, automatically committing data changes `dvc repro`
-To push data to the cloud: `dvc push`
+- To pull all data from the cloud: `dvc pull`
+- To track and commit a new data file: `dvc add; dvc commit`
+- To run a pipeline, automatically committing data changes `dvc repro`
+- To push data to the cloud: `dvc push`
 
 ## Architecture Choices
 
