@@ -1,4 +1,5 @@
 stages:
+
   concat:
     cmd: python stages/concat.py
     deps:
@@ -8,6 +9,7 @@ stages:
       - data/concatenated_battery_profile.csv
     params:
       - development
+
   smooth:
     cmd: python stages/smooth.py
     deps:
@@ -17,6 +19,7 @@ stages:
       - data/smoothed.csv
     params:
       - smoothing
+
   peaks:
     cmd: python stages/peaks.py
     deps:
