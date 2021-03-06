@@ -1,5 +1,7 @@
 development: true
 smoothing:
-  window: 51  # savgol filter window must be odd
+  window: 601  # savgol filter window must be odd
   polyorder: 3  # savgol filter polyorder must be less than window
   wrap_mode: 'nearest'
+cycle_labeling:
+  peak_prominence: 5

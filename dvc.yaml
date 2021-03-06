@@ -1,21 +1,32 @@
 stages:
-  concat:
+
+  assemble_dataset:
     cmd: python stages/concat.py
     deps:
       - stages/concat.py
       - data/initial_features/
     outs:
-      - data/concatenated_battery_profile.csv
+      - data/raw.csv
     params:
       - development
+
   smooth:
     cmd: python stages/smooth.py
     deps:
       - stages/smooth.py
-      - data/concatenated_battery_profile.csv
+      - data/raw.csv
     outs:
-      - data/current.csv
-      - data/voltage.csv
-      - data/temperature.csv
+      - data/smoothed.csv
     params:
       - smoothing
+
+  cycle_labeling:
+    cmd: python stages/cycle_labeler.py
+    deps:
+      - stages/cycle_labeler.py
+      - data/smoothed.csv
+      - data/raw.csv
+    outs:
+      - data/raw_cycle_labeled.csv
+    params:
+      - cycle_labeling

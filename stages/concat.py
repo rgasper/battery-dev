@@ -22,4 +22,4 @@ if params["development"]:
     one_percent = int(len(all_df) / 100)
     one_percent = all_df.index[one_percent]
     all_df = all_df.loc[0:one_percent, :]
-all_df.to_csv("data/concatenated_battery_profile.csv", index=True)
+all_df.to_csv("data/raw.csv", index=True)
