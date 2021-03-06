@@ -1,6 +1,6 @@
 stages:
 
-  concat:
+  assemble_dataset:
     cmd: python stages/concat.py
     deps:
       - stages/concat.py
