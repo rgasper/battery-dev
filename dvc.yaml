@@ -6,7 +6,7 @@ stages:
       - stages/concat.py
       - data/initial_features/
     outs:
-      - data/concatenated_battery_profile.csv
+      - data/raw.csv
     params:
       - development
 
@@ -14,18 +14,19 @@ stages:
     cmd: python stages/smooth.py
     deps:
       - stages/smooth.py
-      - data/concatenated_battery_profile.csv
+      - data/raw.csv
     outs:
       - data/smoothed.csv
     params:
       - smoothing
 
-  peaks:
-    cmd: python stages/peaks.py
+  cycle_labeling:
+    cmd: python stages/cycle_labeler.py
     deps:
-      - stages/peaks.py
+      - stages/cycle_labeler.py
       - data/smoothed.csv
+      - data/raw.csv
     outs:
-      - data/peaks.csv
+      - data/raw_cycle_labeled.csv
     params:
-      - peak_finding
+      - cycle_labeling

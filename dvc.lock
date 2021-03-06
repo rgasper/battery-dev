@@ -6,19 +6,19 @@ concat:
     size: 407845450
     nfiles: 6
   - path: stages/concat.py
-    md5: a2a96aab52da894f3f32ce466ae96bbc
-    size: 706
+    md5: 88073880db3dfec6fe17e86bd07e9df1
+    size: 681
   params:
     params.yaml:
       development: true
   outs:
-  - path: data/concatenated_battery_profile.csv
+  - path: data/raw.csv
     md5: 6f712a198164758807f284642163850a
     size: 3929790
 smooth:
   cmd: python stages/smooth.py
   deps:
-  - path: data/concatenated_battery_profile.csv
+  - path: data/raw.csv
     md5: 6f712a198164758807f284642163850a
     size: 3929790
   - path: stages/smooth.py
@@ -32,8 +32,8 @@ smooth:
         wrap_mode: nearest
   outs:
   - path: data/smoothed.csv
-    md5: 89715499ee4d2cf5fb98e11626aee0b1
-    size: 6828309
+    md5: 2cc5cc1dc739ee078fdf98d5ee0313d3
+    size: 6832506
 peaks:
   cmd: python stages/peaks.py
   deps:
@@ -51,3 +51,23 @@ peaks:
   - path: data/peaks.csv
     md5: e93f7129274ca3ed406c449c3213543f
     size: 70410
+cycle_labeling:
+  cmd: python stages/cycle_labeler.py
+  deps:
+  - path: data/raw.csv
+    md5: 6f712a198164758807f284642163850a
+    size: 3929790
+  - path: data/smoothed.csv
+    md5: 2cc5cc1dc739ee078fdf98d5ee0313d3
+    size: 6832506
+  - path: stages/cycle_labeler.py
+    md5: 89606c40791fe98245af038c06a3d5a3
+    size: 940
+  params:
+    params.yaml:
+      cycle_labeling:
+        peak_prominence: 5
+  outs:
+  - path: data/raw_cycle_labeled.csv
+    md5: a737ebb1612fb07d9e560b16c188b76f
+    size: 2990143
