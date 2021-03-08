@@ -6,3 +6,4 @@ scipy
 pandas
 plotly
 chart_studio
+sklearn

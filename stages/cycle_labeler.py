@@ -10,7 +10,7 @@ with open("params.yaml") as yml:
 
 smooth_data = pd.read_csv("data/smoothed.csv", index_col="timestamp")
 raw_data = pd.read_csv("data/raw.csv", index_col="timestamp")
-current_peaks, properties = find_peaks(smooth_data.current)
+current_peaks, properties = find_peaks(smooth_data.current, prominence=prominence)
 
 cycle_edges = current_peaks.tolist()
 cycle_edges.append(len(raw_data.index) - 1)  # the last cycle just goes off to the end of the plot
@@ -22,4 +22,4 @@ for cycle_number, peak_ind in enumerate(cycle_edges):
     previous_peak_ind = peak_ind
     raw_data.loc[start_timestamp:stop_timestamp, "cycle"] = cycle_number
 
-raw_data.to_csv("data/raw_cycle_labeled.csv", index=False)
+raw_data.to_csv("data/raw_cycle_labeled.csv", index=True)

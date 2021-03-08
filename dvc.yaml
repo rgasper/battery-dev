@@ -1,12 +1,13 @@
 stages:
 
   assemble_dataset:
-    cmd: python stages/concat.py
+    cmd: python stages/concat_and_normalize.py
     deps:
-      - stages/concat.py
+      - stages/concat_and_normalize.py
       - data/initial_features/
     outs:
       - data/raw.csv
+      - models/preprocessors
     params:
       - development
 

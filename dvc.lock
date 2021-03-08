@@ -19,11 +19,11 @@ smooth:
   cmd: python stages/smooth.py
   deps:
   - path: data/raw.csv
-    md5: 6f712a198164758807f284642163850a
-    size: 3929790
+    md5: b1122f92e1709606c511a0d56c226d1d
+    size: 8838354
   - path: stages/smooth.py
-    md5: 29b65d0189754a9028f854967cdba07a
-    size: 634
+    md5: 3ecd835bb2e963717119f915e09d198a
+    size: 609
   params:
     params.yaml:
       smoothing:
@@ -32,8 +32,8 @@ smooth:
         wrap_mode: nearest
   outs:
   - path: data/smoothed.csv
-    md5: 2cc5cc1dc739ee078fdf98d5ee0313d3
-    size: 6832506
+    md5: ddf3499b776a0d4816a979f5a616657d
+    size: 8943055
 peaks:
   cmd: python stages/peaks.py
   deps:
@@ -55,19 +55,40 @@ cycle_labeling:
   cmd: python stages/cycle_labeler.py
   deps:
   - path: data/raw.csv
-    md5: 6f712a198164758807f284642163850a
-    size: 3929790
+    md5: b1122f92e1709606c511a0d56c226d1d
+    size: 8838354
   - path: data/smoothed.csv
-    md5: 2cc5cc1dc739ee078fdf98d5ee0313d3
-    size: 6832506
+    md5: ddf3499b776a0d4816a979f5a616657d
+    size: 8943055
   - path: stages/cycle_labeler.py
-    md5: 89606c40791fe98245af038c06a3d5a3
-    size: 940
+    md5: d95cd3455dc46dac0e110e585d2c8412
+    size: 962
   params:
     params.yaml:
       cycle_labeling:
-        peak_prominence: 5
+        peak_prominence: 0.2
   outs:
   - path: data/raw_cycle_labeled.csv
-    md5: a737ebb1612fb07d9e560b16c188b76f
-    size: 2990143
+    md5: 37410ce96cebbb0217e103d5ce9be79f
+    size: 9080870
+assemble_dataset:
+  cmd: python stages/concat_and_normalize.py
+  deps:
+  - path: data/initial_features/
+    md5: 679eb84ea41c68eb569ba423abb985c3.dir
+    size: 407845450
+    nfiles: 6
+  - path: stages/concat_and_normalize.py
+    md5: ca3cd0640ae698d339d0c14d2167e3f9
+    size: 1643
+  params:
+    params.yaml:
+      development: true
+  outs:
+  - path: data/raw.csv
+    md5: b1122f92e1709606c511a0d56c226d1d
+    size: 8838354
+  - path: models/preprocessors
+    md5: 2e3ef8afb57d754d8eebed36ea3e701a.dir
+    size: 1203
+    nfiles: 3
