@@ -29,5 +29,6 @@ stages:
       - data/raw.csv
     outs:
       - data/raw_cycle_labeled.csv
+      - data/smooth_cycle_labeled.csv
     params:
       - cycle_labeling

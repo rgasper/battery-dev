@@ -61,8 +61,8 @@ cycle_labeling:
     md5: ddf3499b776a0d4816a979f5a616657d
     size: 8943055
   - path: stages/cycle_labeler.py
-    md5: d95cd3455dc46dac0e110e585d2c8412
-    size: 962
+    md5: 9473df8fd6d929ce1828faa74c90f6df
+    size: 1130
   params:
     params.yaml:
       cycle_labeling:
@@ -71,6 +71,9 @@ cycle_labeling:
   - path: data/raw_cycle_labeled.csv
     md5: 37410ce96cebbb0217e103d5ce9be79f
     size: 9080870
+  - path: data/smooth_cycle_labeled.csv
+    md5: e7ff77585bd852db5321de31a90723dc
+    size: 9164951
 assemble_dataset:
   cmd: python stages/concat_and_normalize.py
   deps:
