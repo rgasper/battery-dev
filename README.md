@@ -100,3 +100,4 @@ All code in the top-level directory is configuration, container setup, or the co
 - Jupyter Lab: a flexible and highly adopted entrypoint for writing & debugging python code
 - Data Version Control (DVC): fully defined workflows and easy data sharing when combined with the cloud
 - Plotly: you can make plots with huge numbers of data points that have pan & zoom. Enough said.
+- PyTorch: This was an opportunity to learn it
